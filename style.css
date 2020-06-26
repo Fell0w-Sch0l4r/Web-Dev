@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body{
-    background-image: linear-gradient(90deg,#FFD6BD,#CCAB97,#806B5E,#FF9452,#803D14);
+    background-image: linear-gradient(45deg,#FFD6BD,#CCAB97,#FF9452,#803D14);
 }
 
 h1{
