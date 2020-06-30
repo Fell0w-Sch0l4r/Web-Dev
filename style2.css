@@ -17,7 +17,8 @@ h2{
     color: #0C0A0D;
 }
 main{
-    background-image: linear-gradient(45deg,#EEC6FC 20%,#201740);
+    /*background-image: linear-gradient(45deg,#EEC6FC 20%,#201740);*/
+    background-color: #EEC6FC;
     width: 600px;
     padding: 10px;
     margin: auto;
@@ -27,5 +28,5 @@ main{
 p{
     text-align: justify;
     color: #201740;
-    text-shadow: 1px 1px 0px #20174085
+    /*text-shadow: 1px 1px 0px #20174085*/
 }
