@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 20pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        nome = window.prompt("Digite o seu nome.")
+
+        document.write(`Olá ${nome}. O seu nome tem ${nome.length} letras.<br>`)
+        
+        document.write(`O teu nome em letras maiúsculas é ${nome.toUpperCase()}.<br>`)
+        
+        document.write(`O teu nome em letras minúsculas é ${nome.toLowerCase()}.`)
+
+
+        n1 = Number(window.prompt("Digite um número"))
+        
+        window.alert(`Digitou o número ${n1.toFixed(2)}`)
+    </script>
+</body>
+</html>

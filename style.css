@@ -35,3 +35,8 @@ main{
     background-color:#FFD6BD;
     box-shadow:10px 10px 10px #803D14;
 }
+
+script{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#803D14;
+}
