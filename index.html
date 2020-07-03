@@ -10,21 +10,25 @@
 <body>
     <main>
         <script>
-            window.alert("Bem vindo!")
+            window.alert("Olá")
             
             nome = window.prompt("Como te chamas?")
+            
+            s = window.prompt("O seu gênero [M/F]")
 
-            window.alert(`Bem vindo ao meu site ${nome}.`)
+            s=="F" || s=="f" ? window.alert(`Bem vinda ao meu site ${nome}.`) :  window.alert(`Bem vindo ao meu site ${nome}.`)
 
-            document.write(`<h1>Bem vindo <br>${nome}</h1>`)
+            s=="F" || s=="f" ? document.write(`<h1>Bem vinda <br>${nome}</h1>`) : document.write(`<h1>Bem vinda <br>${nome}</h1>`)
             
             document.write(`<p>O teu nome tem ${nome.length} letras</p>`)
+
+            
 
             n1 = Number(window.prompt("Ano de nascimento?"))
             
             window.alert(`Tu tens ${2020-n1} anos`)
             
-            2020-n1 >=18 ? window.alert("És um adulto(a)"):window.alert("És criança")
+            2020-n1 >=18 ? window.alert("És adulto(a)"):window.alert("És criança")
             
             document.write(`<p>Tu tens ${2020-n1} anos</p>`)
 
