@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testes</title>
+
+    <style>
+        body{
+            font: normal 20pt Arial;
+            text-align: center;
+            background-image: linear-gradient(to left,#0000ff,#2F242C);
+            color: #AAA1C8;
+        }
+
+        input#bot{
+            color: #0000ff;
+            background-color: #AAA1C8;
+        }
+
+        input#num{
+            background-color: #2F242C;
+            color: #F5E6E8;
+        }
+
+        div{
+            margin-top: 20pt;
+        }
+
+        main{
+            margin: auto;
+            width: 700px;
+            height: 400px;
+            background-color: #2F242C;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Departamento de multas</h1>
+    
+    
+    
+        Velocidade do carro <input type="number" name="numero" id="num"> km/h
+    
+        <input type="button" value="Verificar" onclick="testar()" id='bot'>
+    
+        <div id = 'res'>Resultado</div>
+    </main>
+
+
+
+    <script>
+        
+
+        function testar(){
+            a = Number(document.getElementById('num').value)
+            var b = document.getElementById('res')
+            b.innerHTML = `A sua velocidade é de ${a}km/h`
+            if (a>70){
+                b.innerHTML += '<p>Foi <strong>Multado</strong></p>'
+                
+            }else {
+                b.innerHTML += '<p>Continue assim</p>'
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
