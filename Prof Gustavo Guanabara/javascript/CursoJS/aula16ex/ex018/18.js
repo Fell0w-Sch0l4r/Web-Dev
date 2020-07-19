@@ -1,6 +1,6 @@
 var num = []
 var numero = document.getElementById('n1')
-var n1 = Number(numero.value)
+
 let sele = document.querySelector('select#tab')
 
 
@@ -13,15 +13,30 @@ function numcerto(x){
     }
 }
 
+function naLista(y,z){
+    if(y.indexOf(z) != -1){
+        return true
+    }else{
+        return false
+    }
+}
+
 function ad(){
-    if(numcerto(numero) || num.indexOf(n1)!=-1){
+    var n1 = Number(numero.value)
+    
+    if(numcerto(numero) || naLista(num,n1)){
         alert('ERRO! Número inválido ou já existente.')
     }else{
-        numero.value=''
-        let opções = document.createElement('option')
+        document.getElementById('res').innerHTML = ''
+
         num.push(n1)
-        opções.innerHTML = ``
+        var opções = document.createElement('option')
+        opções.innerHTML = `Valor ${n1} adicionado`
+        sele.appendChild(opções)
+        numero.focus
     }
+    numero.value = ''
+    numero.focus()
 }
 
 
@@ -34,17 +49,14 @@ function fin(){
     }else{
         var resposta = document.querySelector('div#res')
         resposta.innerHTML+= `<p>Ao todo, temos ${num.length} números cadastrados.</p>`
-        let maior = menor = soma = 0
+        soma = 0
+        
+        let menor = num.sort()[0]
+       
+        let maior =  num.reverse()[0]
+        
         for(let c in num){
-            if(c==='0'){
-                maior=menor=num[c]
-            }else{
-                if(num[c]>maior){
-                    maior=num[c]
-                }else if(num[c]<menor){
-                    menor=num[c]
-            }
-        }   soma += num[c]
+            soma += num[c]
         }
         resposta.innerHTML+= `<p>O maior valor informado foi ${maior}</p>`
         resposta.innerHTML+= `<p>O menor valor informado foi ${menor}</p>`
