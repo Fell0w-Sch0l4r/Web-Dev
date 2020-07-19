@@ -1,22 +1,27 @@
 var num = []
+var numero = document.getElementById('n1')
+var n1 = Number(numero.value)
+let sele = document.querySelector('select#tab')
+
+
+function numcerto(x){
+    a = x.value
+    if(a.length==0 || Number(a)>100 || Number(a)<0){
+        return true
+    }else{
+        return false
+    }
+}
 
 function ad(){
-    document.querySelector('div#res').innerHTML = ''
-    
-    var numero = document.querySelector('input#n1').value
-    n1 = Number(document.querySelector('input#n1').value)
-    if(numero.length===0 || n1<0 || n1>100 || num.indexOf(n1)!=-1){
-        alert('ERRO! Valor inválido ou já encontrado na lista')
+    if(numcerto(numero) || num.indexOf(n1)!=-1){
+        alert('ERRO! Número inválido ou já existente.')
     }else{
+        numero.value=''
+        let opções = document.createElement('option')
         num.push(n1)
-        var op = document.createElement('option')
-        op.innerText = `Valor ${n1} adicionado`
-        op.value = `v${num.indexOf(n1)}`
-
-        document.getElementById('tab').appendChild(op)
+        opções.innerHTML = ``
     }
-
-    
 }
 
 
@@ -52,4 +57,3 @@ function fin(){
 }
 
 
-gvigh ggvvitgvkkggvgvkgvgvkgkhvgvkjgjvk
