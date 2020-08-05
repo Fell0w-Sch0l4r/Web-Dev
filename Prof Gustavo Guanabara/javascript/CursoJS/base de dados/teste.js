@@ -45,7 +45,6 @@ function adcicionar(){
 
 }
 
-/*info = [['Ana',18,'Feminino'],['Ângel',17,'Masculino'],['Joaquina',20,'Feminino']]*/
 
 
 function fim(){
