@@ -3,7 +3,7 @@ var resposta = document.querySelector('div#res')
 var ano = new Date().getFullYear()
 
 function adcicionar(){
-    let infor = []
+    let infor =  {}
 
     var nome = document.getElementById('nome')
     var anonas = document.querySelector('input#idade')
@@ -20,14 +20,17 @@ function adcicionar(){
     
     
 
-    infor.push(nome.value)
-    infor.push(idade)
-    infor.push(sexo)
+    
+    infor['nome']=nome.value
+    
+    infor['idade']=idade
+    
+    infor['sexo']=sexo
     
     var opp = document.createElement('option')
     opp.value = `pessoa ${info.length}`
 
-    opp.innerHTML = `${info.length+1} - ${infor[0]}, ${infor[1]} anos, sexo ${infor[2]}`
+    opp.innerHTML = `${info.length+1} - ${infor.nome}, ${infor.idade} anos, sexo ${infor.sexo}`
 
     document.getElementById('lista').appendChild(opp)
     info.push(infor)
@@ -67,28 +70,27 @@ function fim(){
     
         if (info[0]==info[c]){
             
-            mais_velho = [info[c][0],info[c][1]]
+            mais_velho = {nome:info[c].nome,idade:info[c].idade}
             
-            mais_novo = [info[c][0],info[c][1]]
+            mais_novo = {nome:info[c].nome,idade:info[c].idade}
         
-        }else if(info[c][1]>mais_velho[1]){
+        }else if(info[c].idade>mais_velho.idade){
             
-            mais_velho = [info[c][0],info[c][1]]
+            mais_velho = {nome:info[c].nome,idade:info[c].idade}
        
-        }else if (info[c][1]<mais_novo[1]){
+        }else if (info[c].idade<mais_novo.idade){
             
-            mais_novo = [info[c][0],info[c][1]]
+            mais_novo = {nome:info[c].nome,idade:info[c].idade}
         }
     
-        média += info[c][1]
+        média += info[c].idade
     }
     resposta.innerHTML += `<p>Foram cadastradas ${info.length} pessoas </p>`
-    resposta.innerHTML += `<p>A pessoa mais velha é ${mais_velho[0]}, que possui ${mais_velho[1]} anos.</p>`
-    resposta.innerHTML += `<p>A pessoa mais nova é ${mais_novo[0]}, que possui ${mais_novo[1]} anos.</p>`
+    resposta.innerHTML += `<p>A pessoa mais velha é ${mais_velho.nome}, que possui ${mais_velho.idade} anos.</p>`
+    resposta.innerHTML += `<p>A pessoa mais nova é ${mais_novo.nome}, que possui ${mais_novo.idade} anos.</p>`
     resposta.innerHTML += `<p>A média de idades das pessoas cadstradas é de ${média/info.length}.</p>`
     }
     
     
 }
 
-tttttttt
